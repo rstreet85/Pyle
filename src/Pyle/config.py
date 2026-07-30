@@ -10,7 +10,7 @@ Configuration for development environment
 class DevConfig(Config):
     DEBUG = True
     HOST = '0.0.0.0'
-    PORT = 8080
+    PORT = 5000
 
 '''
 Configuration for testing environment

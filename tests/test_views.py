@@ -42,5 +42,6 @@ def test_status(client):
     response = client.get('/status')
 
     assert response.status_code == 200
+    
     assert b'<h1>Vehicle Status</h1>' in response.data
 
