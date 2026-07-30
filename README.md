@@ -24,7 +24,19 @@ For each vehicle, you can set a custom schedule for tasks based on either mileag
 The entire maintenance record can also be view and edited as well.
 
 ## Installation
+**Docker (Recommended)**
+1. Clone the repository:
+`git clone https://github.com/rstreet85/Pyle.git`
 
+2. Navigate to the project directory and build the Docker image:
+`docker build -t pyle-app .`
+
+3. Once built, run a container wih the app (**NOTE** You can map any desired port to the image):
+`docker run -d -p 5000:5000 pyle-app`
+
+4. You should now be able to connect to the app at http://localhost:5000 (or other specified port)
+
+**WARNING:** Currently the database is a local SQLite instance stored on the same container as the app.
 
 ## License
 MIT
