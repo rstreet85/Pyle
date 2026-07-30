@@ -1,17 +1,19 @@
-# Python
+# Python artifacts
 **/__pycache__/
 *.py[cod]
 *$py.class
 
 # Virtual environment
-.venv/
+.venv
+.env
+.envrc
 venv/
 env/
 ENV/
 env.bak/
 venv.bak/
 
-# Pip
+# Pip logs
 pip-log.txt
 pip-delete-this-direcetory.txt
 
@@ -24,9 +26,8 @@ pip-delete-this-direcetory.txt
 *.sqlite3-journal
 
 # Flask
-instance/*
+instance/
 .webassets-cache
-.env
 
 # System & IDE
 .DS_Store
