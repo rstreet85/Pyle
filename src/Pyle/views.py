@@ -2,7 +2,7 @@ from flask import (
     Blueprint,
     current_app,
     render_template
-)
+    )
 
 app_view = Blueprint('views', __name__)
 
