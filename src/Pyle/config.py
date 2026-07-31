@@ -1,8 +1,9 @@
-# import os
+import os
 
 class Config:
     APP_NAME = 'Pyle'
     # APP_VERSION
+    SECRET_KEY = os.environ.get('SECRET_KEY')
 
 '''
 Configuration for development environment

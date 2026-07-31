@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>New Vehicle Profile</h1>
+
+<form action="" method="post" novalidate>
+    <p>
+        {{ form.vehicle_name.label }}<br>
+        {{ form.vehicle_name(size=32) }}
+    </p>
+    <p>
+        {{ form.vehicle_year.label }}<br>
+        {{ form.vehicle_year(size=4) }}
+    </p>
+    <p>
+        {{ form.vehicle_make.label }}<br>
+        {{ form.vehicle_make(size=64) }}
+    </p>
+    <p>
+        {{ form.vehicle_model.label }}<br>
+        {{ form.vehicle_model(size=64) }}
+    </p>
+    <p>
+        {{ form.vin.label }}<br>
+        {{ form.vin(size=32) }}
+    </p>
+    <p>
+        {{ form.mileage.label }}<br>
+        {{ form.mileage(size=32) }}
+    </p>
+    <p>
+        {{ form.add_profile() }}
+    </p>
+</form>
+{% endblock %}
