@@ -1,11 +1,11 @@
 from flask import Flask
 
-from config import (
+from .config import (
     DevConfig,
     TestConfig,
     ProdConfig
     )
-from views import app_view
+from .views import app_view
 
 def create_app(config_set=DevConfig):
     app = Flask(__name__)

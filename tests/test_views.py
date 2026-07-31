@@ -5,9 +5,6 @@ def test_index(client):
     response = client.get('/')
     assert response.status_code == 200
 
-    assert b'<title>Pyle - Main</title>' in response.data
-    assert b'<h1>Main Menu</h1>' in response.data
-
     response = client.get('/index')
     assert response.status_code == 200
 
@@ -16,6 +13,13 @@ def test_index(client):
 
     response = client.get('/home')
     assert response.status_code == 200
+
+'''
+Test Main Menu content
+'''
+def test_index_content(client):
+    response = client.get('/')
+    assert b'<title>Pyle - Main</title>' and b'<h1>Main Menu</h1>' in response.data
 
 '''
 Test if Vehicle Details page is loading

@@ -4,7 +4,7 @@ from src.Pyle.app import create_app
 from src.Pyle.config import TestConfig
 
 '''
-Test App configuration
+Test App creation
 '''
 @pytest.fixture()
 def app():
