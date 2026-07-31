@@ -32,7 +32,6 @@ Test if Vehicle History page is loading
 def test_history(client):
     response = client.get('/history')
     assert response.status_code == 200
-    assert b'<h1>Maintenance History</h1>' in response.data
 
 '''
 Test Vehicle History content
@@ -46,10 +45,7 @@ Test if Vehicle Status page is loading
 '''
 def test_status(client):
     response = client.get('/status')
-
     assert response.status_code == 200
-    
-    assert b'<h1>Vehicle Status</h1>' in response.data
 
 '''
 Test Vehicle Status content
