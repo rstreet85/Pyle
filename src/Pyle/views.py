@@ -54,7 +54,7 @@ def status():
 '''
 Add Vehicle page
 '''
-@app_view.route('/add_vehicle')
+@app_view.route('/add_vehicle', methods=['GET', 'POST'])
 def add_vehicle():
     form = NewVehicleForm()
     return render_template(
