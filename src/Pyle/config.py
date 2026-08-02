@@ -12,6 +12,9 @@ class Config:
     HOST = '0.0.0.0'
     PORT = 5000
 
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///pyle.db'
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
+
 '''
 Configuration for development environment
 '''

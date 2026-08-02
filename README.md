@@ -6,7 +6,7 @@ A Flask app for managing automotive maintenance. Track and plan your vehicle ser
 ### Create Vehicle Profile
 Create a profile for each vehicle to track & schedule maintenance. Each profile also holds specifications and features such as:
 - Make, Model, Year, and VIN
-- Mileage
+- Mileage or Hours
 - Engine & Powertrain specs
 - Fluid types and volumes
 - Weight, wheelbase, length
@@ -24,14 +24,14 @@ For each vehicle, you can set a custom schedule for tasks based on either mileag
 The entire maintenance record can also be view and edited as well.
 
 ## Installation
-**Docker (Recommended)**
+### Docker (Recommended)
 1. Clone the repository:
 `git clone https://github.com/rstreet85/Pyle.git`
 
 2. Navigate to the project directory and build the Docker image:
 `docker build -t pyle-app .`
 
-3. Once built, run a container wih the app (**NOTE** You can map any desired port to the image):
+3. Once built, run a container wih the app (**NOTE** You can map any desired port to the container):
 `docker run -d -p 5000:5000 pyle-app`
 
 4. You should now be able to connect to the app at http://localhost:5000 (or other specified port)
