@@ -4,7 +4,10 @@ from flask import (
     render_template
     )
 
-from .forms import NewVehicleForm
+from .forms import (
+    NewVehicleForm,
+    NewRecordForm
+    )
 
 app_view = Blueprint('views', __name__)
 
@@ -60,5 +63,16 @@ def add_vehicle():
     return render_template(
         'add_vehicle.html',
         title=f'{current_app.config['APP_NAME']} - New Vehicle Profile',
+        form=form
+        )
+
+'''
+Add Record page
+'''
+@app_view.route('/add_record', methods=['GET', 'POST'])
+def add_record():
+    form = NewRecordForm()
+    return render_template('add_record.html',
+        title=f'{current_app.config['APP_NAME']} - New Maintenance Record',
         form=form
         )
