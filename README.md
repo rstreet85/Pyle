@@ -16,7 +16,7 @@ For each maintenace event (EX: oil change, spark plug replacement), maintain a l
 - Date & mileage
 - Task performed, and by whom
 - Part used & expected lifespan
-- Any general notes or images related to the job.
+- Any general notes or images related to the job
 
 ### View Full Vehicle Maintenance History and Status
 For each vehicle, you can set a custom schedule for tasks based on either mileage or time intervals. The current date & latest mileage will be used to display an approximate status of the part, and upcoming maintenance will be highlighted.
@@ -34,7 +34,7 @@ The entire maintenance record can also be view and edited as well.
 3. Once built, run a container wih the app (**NOTE** You can map any desired port to the container):
 `docker run -d -p 5000:5000 pyle-app`
 
-4. You should now be able to connect to the app at http://localhost:5000 (or other specified port)
+4. You should now be able to connect to the app at http://localhost:5000 (or other specified port).
 
 **WARNING:** Currently the database is a local SQLite instance stored on the same container as the app.
 
