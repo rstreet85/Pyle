@@ -6,7 +6,7 @@ from src.Pyle.config import TestConfig
 '''
 Test App
 '''
-@pytest.fixture()
+@pytest.fixture(scope='session')
 def app():
     app = create_app(TestConfig)
 
@@ -15,14 +15,21 @@ def app():
 '''
 Test Client
 '''
-@pytest.fixture()
+@pytest.fixture(scope='session')
 def client(app):
     return app.test_client()
 
 '''
+Test Database Connection
+'''
+@pytest.fixture(scope='module')
+def db_session():
+    pass
+
+'''
 Test 'Vehicle' object for adding vehicle
 '''
-@pytest.fixture()
+@pytest.fixture(scope='session')
 def test_vehicle():
     vehicle = {
         'vehicle_name' : 'Test Vehicle',
@@ -36,7 +43,7 @@ def test_vehicle():
 '''
 Test 'Vehicle' object for updating vehicle
 '''
-@pytest.fixture()
+@pytest.fixture(scope='session')
 def test_updated_vehicle():
     vehicle = {
         'vehicle_name' : 'Test Vehicle',
@@ -58,12 +65,12 @@ def test_updated_vehicle():
 '''
 Test 'Maintenance' object for adding a new maintenance record
 '''
-@pytest.fixture()
+@pytest.fixture(scope='session')
 def test_maintenance():
     maintenance = {
         # NOTE Will add logic later for incrementing a uuid for use as vehicle id
         # 'vehicle_id' : '1001',
-        'vehicle_name' : '',
+        'vehicle_name' : 'Test Vehicle',
         'date' : '2025-10-31',
         'miles' : '550,089',
         'technician' : 'Otto',
@@ -77,7 +84,7 @@ def test_maintenance():
 '''
 Test 'Maintenance' object for updating an existing record
 '''
-@pytest.fixture()
+@pytest.fixture(scope='session')
 def test_maintenance_update():
     maintenance = {
         'vehicle_id' : '1001',
