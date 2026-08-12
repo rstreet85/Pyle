@@ -61,7 +61,9 @@ Test 'Maintenance' object for adding a new maintenance record
 @pytest.fixture()
 def test_maintenance():
     maintenance = {
-        'vehicle_id' : '1001',
+        # NOTE Will add logic later for incrementing a uuid for use as vehicle id
+        # 'vehicle_id' : '1001',
+        'vehicle_name' : '',
         'date' : '2025-10-31',
         'miles' : '550,089',
         'technician' : 'Otto',

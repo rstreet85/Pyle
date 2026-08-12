@@ -6,7 +6,7 @@
 <form action="" method="post" novalidate>
     <p>
         {{ form.vehicle_name.label }}<br>
-        {{ form.vehicle_name(size=32) }}
+        {{ form.vehicle_name(size=64) }}
     </p>
     <p>
         {{ form.vehicle_year.label }}<br>
@@ -14,11 +14,11 @@
     </p>
     <p>
         {{ form.vehicle_make.label }}<br>
-        {{ form.vehicle_make(size=64) }}
+        {{ form.vehicle_make(size=32) }}
     </p>
     <p>
         {{ form.vehicle_model.label }}<br>
-        {{ form.vehicle_model(size=64) }}
+        {{ form.vehicle_model(size=32) }}
     </p>
     <p>
         {{ form.vin.label }}<br>
@@ -26,7 +26,7 @@
     </p>
     <p>
         {{ form.mileage.label }}<br>
-        {{ form.mileage(size=32) }}
+        {{ form.mileage(size=10) }}
     </p>
     <p>
         {{ form.add_profile() }}
