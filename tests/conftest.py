@@ -1,13 +1,14 @@
 import pytest
 
 from flask import current_app # will eventully pull DB name (minus extension) from config
-from sqlalchemy import (create_engine)
+from sqlalchemy import (create_engine, MetaData)
 from sqlalchemy.exc import (OperationalError, ProgrammingError)
+from sqlalchemy.orm import Session
 
 from src.Pyle.app import create_app
 from src.Pyle.config import TestConfig
 
-DB_NAME = 'sqlite:///pyle_test.db'
+TEST_DB_URL = 'sqlite:///pyle_test.db'
 
 '''
 Test App
@@ -26,12 +27,22 @@ def client(app):
     return app.test_client()
 
 '''
-Test Database Connection
+Test Database session
 '''
 @pytest.fixture(scope='module')
 def db_session():
-    conn = create_engine.conenct()
-    pass
+    engine = create_engine(TEST_DB_URL)
+
+    metadata = MetaData()
+    metadata.create_all(engine)
+
+    conn = engine.connect()
+    session = Session(bind=conn)
+
+    yield session
+
+    session.close()
+    conn.close()
 
 '''
 Test 'Vehicle' object for adding vehicle
