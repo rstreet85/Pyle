@@ -1,7 +1,13 @@
 import pytest
 
+from flask import current_app # will eventully pull DB name (minus extension) from config
+from sqlalchemy import (create_engine)
+from sqlalchemy.exc import (OperationalError, ProgrammingError)
+
 from src.Pyle.app import create_app
 from src.Pyle.config import TestConfig
+
+DB_NAME = 'sqlite:///pyle_test.db'
 
 '''
 Test App
@@ -24,6 +30,7 @@ Test Database Connection
 '''
 @pytest.fixture(scope='module')
 def db_session():
+    conn = create_engine.conenct()
     pass
 
 '''
